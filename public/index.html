@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+	<title>Chirp</title>
+<link rel="stylesheet" type="text/css" href="stylesheets/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+</head>
+<body ng-app="chirpApp" class="noPaddingTop">
+	<nav class="navbar-fluid navbar-default" class="paddingTop4">
+		<div class="container">
+			<a class="navbar-brand" href="#">Tweet!</a>
+			<p class="navbar-text">Tweet your message</p>
+			<p class="navbar-right navbar-text" ng-hide="isAuthenticated"><a href="#/login">Login</a> or <a href="#/register">Register</a></p>
+			<p class="navbar-right navbar-text" ng-show="isAuthenticated"><a href="#" ng-click="signOut($event)">Logout</a></p>
+			<p class="navbar-right navbar-text" ng-show="isAuthenticated">Signed in as <b>{{current_user}}</b></p>
+		</div>
+	</nav>
+	<div id='main' ng-controller="mainController" class="container">
+		<div class="col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8">
+			<div class="clearfix" ng-view>
+				
+			</div>
+		</div>
+	</div>
+<script type="text/javascript" src="javascripts/libs/angular.min.js"></script>
+<script type="text/javascript" src="javascripts/app.js"></script>
+<script type="text/javascript" src="javascripts/services/service.js"></script>
+<script type="text/javascript" src="javascripts/controllers/chirp-controller.js"></script>
+<script type="text/javascript" src="javascripts/controllers/auth-controller.js"></script>
+<script type="text/javascript" src="javascripts/controllers/login-controller.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+
+body{
+	padding-top: 100px;
+	width: 100%;
+	height: 100%;
+}
+
+a{
+	color: #00B7FF;
+}
+
+.submit-btn{
+	background-color: #b1dbff;
+	margin: 10px 0px 10px 0px;
+}
+
+.post{
+	padding: 10px;
+	margin-bottom: 5px;
+	border-radius: 5px;
+}
+
+.odd{
+	background-color: #f2f9ff;
+}
+
+.even{
+	background-color: #eceff3;
+}
+
+.form_auth{
+	max-width: 330px;
+	padding: 5px;
+	margin: 0 auto;
+}
+
+.completeWidth{
+	width: 100%;
+}
+
+.margin5{
+	margin-top: 5px;
+}
+
+.noPaddingTop{
+	padding-top: 0px;
+}
+
+.paddingTop4{
+	padding-top: 4px;
+}

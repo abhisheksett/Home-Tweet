@@ -1,0 +1,22 @@
+<div ng-controller="chirpController" ng-init="getAllChirps()">
+<form ng-submit="post()" class="row" ng-show="isAuthenticated">
+	<textarea required class="form-control" maxlength="200" rows="3" placeholder="Say something" ng-model="newPost.text"></textarea>
+	<input class="btn submit-btn pull-right" type="submit" value="Tweet!"/>
+</form>
+<div id="post-stream" class="row">
+	<h4>Tweet Feed</h4>
+	<div class="post" ng-repeat= "post in posts | orderBy:'created_at':true" ng-class-odd="'odd'" ng-class-even="'even'">
+	<div class="completeWidth">
+		<p ng-show="!updateInProgress">{{post.text}}</p>
+		<textarea required ng-show="updateInProgress" class="form-control" maxlength="200" rows="3" ng-model="post.text"></textarea>
+		<small>Posted_by @{{post.username}}</small>
+		<small class="pull-right">{{post.created_at | date:"h:mma 'on' MMM d, y"}}</small>
+	</div>
+	<div class="completeWidth margin5" ng-show="post.username == current_user">
+		<button class="btn btn-sm btn-danger" ng-click="deletePost(post._id)">Delete</button>
+		<button ng-show="!updateInProgress" class="btn btn-sm btn-success" ng-click="updateInProgress=true">Update</button>
+		<button ng-show="updateInProgress" class="btn btn-sm btn-success" ng-click="updateInProgress=false; updatePost(post._id)">Done</button>
+	</div>
+	</div>
+</div>
+</div>
