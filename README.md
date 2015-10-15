@@ -17,4 +17,4 @@ in, he can post as well. Logged in user can edit or delete his own previous post
 
 ##### Note:
 
-By default app will have the url: http://192.168.1.10:3000. 
+By default app will have the url: http://localhost:3000. 
